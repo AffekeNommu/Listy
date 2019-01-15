@@ -5,7 +5,7 @@
     $dbname = "Shopping";
     $data=array();
     // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname, 0, '/path/to/server');
+    $conn = new mysqli($servername, $username, $password, $dbname, 0, '/path/to/mysql/socket');
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
