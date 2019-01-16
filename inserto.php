@@ -1,6 +1,6 @@
 <?php
     $servername = "localhost";
-    $username = "username";
+    $username = "name";
     $password = "password";
     $dbname = "Shopping";
     $data=array();
@@ -10,6 +10,7 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
+    //Pretty straightforward, get post values and insert into database
     $Item=$_GET["Item"];
     $Shop=$_GET["Shop"];
     $sql = "INSERT INTO List (Item, Shop) VALUES ('$Item','$Shop')";
@@ -19,4 +20,4 @@
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
     $conn->close();
-    ?>
+?>
