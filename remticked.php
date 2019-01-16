@@ -1,6 +1,6 @@
 <?php
     $servername = "localhost";
-    $username = "username";
+    $username = "user";
     $password = "password";
     $dbname = "Shopping";
     $data=array();
@@ -10,6 +10,7 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
+    //Make the checked items not display. Database can be cleaned by admin access. Can also correct oopsies.
     $sql = "Update List set Display = FALSE where Checked = TRUE";
     if ($conn->query($sql) === TRUE) {
         header ("location: https://path/to/index.php");
@@ -17,4 +18,4 @@
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
     $conn->close();
-    ?>
+?>
