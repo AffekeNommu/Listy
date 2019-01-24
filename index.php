@@ -45,14 +45,18 @@
     //New entry insert form
     echo '<form action="https://path/to/inserto.php">';
     echo 'Item <input type="text" name="Item">';
-    //yes these could be in a table but for the moment not concerned having them static
+    //Get list of names from the table and display in order
+    $sql = "SELECT Name FROM Shops order by Number";
+    $result = $conn->query($sql);
+    //yes I put them in a table after all so almost as many lines as a static list
     echo '<select name="Shop">';
-    echo '<option value="Coles">Coles</option>';
-    echo '<option value="Chemist">Chemist</option>';
-    echo '<option value="BigW">BigW</option>';
-    echo '<option value="Woolworths">Woolworths</option>';
-    echo '<option value="Aldi">Aldi</option>';
-    echo '<option value="Other">Other</option>';
+    while($row = $result->fetch_assoc()) {
+        echo '<option value="';
+        echo $row['Name'];
+        echo '">';
+        echo $row['Name'];
+        echo '</option>';
+    }
     echo '</select><br>';
     echo '<input type="submit" value="Add item">';
     echo '</form>';
