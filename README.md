@@ -1,4 +1,4 @@
-# Listy
+# Listy McListface
 Grocery list completely overengineered
 Requires MySQL and PHP on a web server
 
@@ -9,6 +9,7 @@ I have a webserver...
 Ok it has a main index.php which calls 3 other php files.
 We have inserto.php which adds entries to the database.
 Next remticked.php which clears the display flag on the line in the database. We are not monsters so items are not deleted immediately.
+There is a undo.php which clears the checked and sets the display flag for items that were removed in the last 10 minutes.
 Finally checks.php which updates the checkboxes in the database.
 
 Structure of the database table List is:
