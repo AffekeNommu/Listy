@@ -25,4 +25,4 @@ Number, Int
 
 Interface is simple and intended for phone use.
 It shows the database table rows in a html table. It has an entry form with a dropdown populated with common shops ordered by most frequently used. 
-You can set flags and submit updates of them to the database. There is also the remove checked button.
+You can set flags and submit updates of them to the database. There is also the remove checked button and an undo for it.
