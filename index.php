@@ -65,5 +65,10 @@
     echo 'Save ticks before removing<br>';
     echo '<input type="submit" value="Remove Ticked">';
     echo '</form>';
+    //Crude undo last so many minutes
+    echo '<form action ="https://path/to/undo.php" method="POST">';
+    echo 'Undo recent removes<br>';
+    echo '<input type="submit" value="Undo Removes">';
+    echo '</form>';
     $conn->close();
 ?>
