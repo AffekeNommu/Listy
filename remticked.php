@@ -11,7 +11,7 @@
         die("Connection failed: " . $conn->connect_error);
     }
     //Make the checked items not display. Database can be cleaned by admin access. Can also correct oopsies.
-    $sql = "Update List set Display = FALSE where Checked = TRUE";
+    $sql = "Update List set Display = FALSE where Checked = TRUE or trim(Item) =''";
     if ($conn->query($sql) === TRUE) {
         header ("location: https://path/to/index.php");
     } else {
