@@ -21,6 +21,12 @@
     echo '<form action="https://path/to/checks.php" method="POST">';
     // output data of each row
     while($row = $result->fetch_assoc()) {
+        //Add a double row if shop changes
+        $curshop=$row['Shop'];
+        if ($lastshop!=$curshop){
+            echo "<tr><td></td><td></td><td></td></tr>";
+        }
+        $lastshop=$row['Shop'];
         echo "<tr align=center><td>";
         //Show checked state based on database
         $checked = '';
